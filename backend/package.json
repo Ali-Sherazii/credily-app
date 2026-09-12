@@ -9,6 +9,7 @@
     "test:db": "node test-db-connection.js"
   },
   "dependencies": {
+    "@google-cloud/language": "^7.2.3",
     "bcryptjs": "^3.0.2",
     "cloudinary": "^1.41.3",
     "cors": "^2.8.5",

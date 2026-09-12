@@ -1,11 +1,10 @@
 import { io } from "socket.io-client";
 
-// Define possible backend URLs in order of preference
-const BACKEND_URLS = [
-  "http://localhost:5000",
-  "http://localhost:3000",
-  "http://localhost:8900",
-];
+// Define possible backend URLs in order of preference.
+// In production, set VITE_SOCKET_URL to your deployed backend URL (e.g. Render).
+const BACKEND_URLS = import.meta.env.VITE_SOCKET_URL
+  ? [import.meta.env.VITE_SOCKET_URL]
+  : ["http://localhost:5000", "http://localhost:3000", "http://localhost:8900"];
 
 // Initialize with null - will be created in the function
 let socket = null;
