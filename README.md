@@ -72,37 +72,12 @@ This project is structured into separate frontend and backend directories.
    node test-db-connection.js
    ```
 
-## Supporting Different Port Configurations
+## Deployment
 
-Some team members use port 4000, while others use port 5000. To avoid code conflicts:
+The backend is deployed on the render and the frontend is deployed on the vercel.
+You can explore the web application via link below using the demo credential (username: demo-account password: 123456) or simply signup.
+https://credily-app-blond.vercel.app/login
 
-1. Use the environment variables in both frontend and backend as shown above
-2. Keep `.env` files in your `.gitignore` to avoid committing personal configurations
-
-## MongoDB Atlas Connection
-
-Find your connection string from the list below:
-
-| Team Member            | Connection String                                                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Jahanzeb Babar         | `mongodb+srv://mbabarbscs23seecs:4231@cluster0.2wkplzo.mongodb.net/Credily?retryWrites=true&w=majority&appName=Cluster0`  |
-| Shaheer Saleh          | `mongodb+srv://msalehbscs23seecs:4231@cluster0.2wkplzo.mongodb.net/Credily?retryWrites=true&w=majority&appName=Cluster0`  |
-| Roshan Jalil           | `mongodb+srv://rjalilbscs23seecs:4231@cluster0.2wkplzo.mongodb.net/Credily?retryWrites=true&w=majority&appName=Cluster0`  |
-| Syed Fawwad Ahmed      | `mongodb+srv://sfahmedbscs23seecs:4231@cluster0.2wkplzo.mongodb.net/Credily?retryWrites=true&w=majority&appName=Cluster0` |
-| Syed Ali Hassan Jaffri | `mongodb+srv://sjaffribscs23seecs:4231@cluster0.2wkplzo.mongodb.net/Credily?retryWrites=true&w=majority&appName=Cluster0` |
-
-### Troubleshooting Connection Issues
-
-- Verify you're using the correct connection string
-- Check your internet connection
-- Confirm MongoDB Atlas service is running
-- For persistent issues, contact Fawwad
-
-> Note: The MongoDB cluster allows connections from any IP address (0.0.0.0/0). For production, we should implement more restrictive access controls.
-
-## React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and ESLint rules.
 
 Currently, two official plugins are available:
 
