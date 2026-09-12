@@ -27,12 +27,13 @@ const connectDB = async () => {
       );
     }
 
-    // Add database name to URI if needed
-    const finalUri = !uri.includes("Credily")
-      ? uri.includes("?")
-        ? uri.replace("?", "/Credily?")
-        : `${uri}/Credily`
-      : uri;
+    // Add database name to URI if it isn't already specified (handles both
+    // "...mongodb.net/?opts" and "...mongodb.net?opts" forms without producing "//Credily")
+    const [rawBase, queryString] = uri.split("?");
+    const base = rawBase.replace(/\/$/, "");
+    const hasDbName = base.split("@").pop().includes("/");
+    const finalBase = hasDbName ? base : `${base}/Credily`;
+    const finalUri = queryString ? `${finalBase}?${queryString}` : finalBase;
 
     // Connection options
     const options = {
